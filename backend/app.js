@@ -4,6 +4,7 @@ import notFound from "./src/middlewares/notFound.middleware.js"
 import errorHandler from "./src/middlewares/errorHandler.js"
 import cors from "cors"
 import env from "./src/config/env.js"
+import cookieParser from "cookie-parser";
 
 const app = express()
 
@@ -24,6 +25,9 @@ app.use(cors({
 }));
 
 app.use(express.json())
+
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
     res.send("Ticket Booking API is running 🚀");
 });
