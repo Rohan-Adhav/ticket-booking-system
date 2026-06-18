@@ -24,7 +24,9 @@ app.use(cors({
 }));
 
 app.use(express.json())
-
+app.get("/", (req, res) => {
+    res.send("Ticket Booking API is running 🚀");
+});
 app.use("/api", router)
 app.use(notFound)
 app.use(errorHandler)
